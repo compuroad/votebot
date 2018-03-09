@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head lang="en">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/style.css" th:href="@{css/style.css}" rel="stylesheet" media="screen"/>
+</head>
+
+<body>
+<div class="container">
+    <div th:fragment="header">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/voteproposal/new}">New Candidate</a></li>
+                        <li><a href="#" th:href="@{/cast}">Cast vote</a></li>
+                        <li><a href="#" th:href="@{/voteproposals}">Candidate Rank</a></li>
+                        <li><a href="#" th:href="@{/vote/comment}">Comment</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="#" th:href="@{/votes}">Votes</a></li>
+                        <li><a href="#" th:href="@{/vote/new}">Create new vote</a></li>
+                    </ul>
+
+
+
+                </div>
+            </div>
+        </nav>
+
+        <div class="jumbotron">
+            <div class="row text-center">
+                <div class="">
+                    <h2>Vote Bot App</h2>
+                    <!--<h3>App</h3>-->
+                </div>
+            </div>
+            <!--<div class="row text-center">
+                <img src="../../static/images/boot.png" width="200" th:src="@{/images/boot.png}"/>
+            </div>-->
+        </div>
+
+    </div>
+</div>
+</body>
+</html>

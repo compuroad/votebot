@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Vote Bot App</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(votes)}">
+        <h2>Vote List</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>Id</th>
+
+                <th>Vote Title</th>
+                <th>Vote Detail</th>
+                <th>Line Of Business</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="vote : ${votes}">
+                <td th:text="${vote.id}"><a href="/vote/${vote.id}">Id</a></td>
+
+                <td th:text="${vote.name}">Vote Title</td>
+                <td th:text="${vote.detail}">Vote Detail</td>
+                <td th:text="${vote.linebusiness}">Line Of Business</td>
+
+                <td><a th:href="${ '/vote/' + vote.id}">View</a></td>
+                <td><a th:href="${'/vote/edit/' + vote.id}">Edit</a></td>
+                <td><a th:href="${'/vote/delete/' + vote.id}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
